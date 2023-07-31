@@ -1,0 +1,16 @@
+type Test {
+  id: ID!
+  name: String!
+  # Add other fields as needed
+}
+
+input TestInput {
+  id: ID!
+  name: String
+  # Add other input fields as needed
+}
+
+type Mutation {
+  myTestPlugin(input: TestInput!): Test
+  # Add other mutations here
+}

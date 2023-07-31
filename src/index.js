@@ -2,6 +2,11 @@ import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
 const pkg = require("../package.json");
+import mutations from "./mutations/index.js";
+// import queries from "./queries/index.js";
+import resolvers from "./resolvers/index.js";
+import schemas from "./schemas/index.js";
+
 
 /**
  * @summary Import and call this function to add this plugin to your API.
@@ -10,8 +15,17 @@ const pkg = require("../package.json");
  */
 export default async function register(app) {
   await app.registerPlugin({
-    label: pkg.label,
-    name: pkg.name,
-    version: pkg.version
+  label: "testPlugin",
+    name: "testPlugin",
+    version: pkg.version,
+    graphQL: {
+      resolvers,
+      schemas: [
+        schemas
+      ]
+    },
+    mutations,
+    // queries
+
   });
 }
