@@ -20,9 +20,7 @@ export default async function register(app) {
     version: pkg.version,
     graphQL: {
       resolvers,
-      schemas: [
-        schemas
-      ]
+      schemas: [schemas]
     },
     mutations,
     // queries

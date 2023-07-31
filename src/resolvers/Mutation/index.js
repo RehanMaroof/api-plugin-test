@@ -1,4 +1,4 @@
-import myTestPlugin from "../../mutations/myTestPlugin";
+import myTestPlugin from "./myTestPlugin.js";
 
 export default {
     myTestPlugin
